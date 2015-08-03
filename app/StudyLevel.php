@@ -2,10 +2,14 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class StudyLevel extends Model
+class StudyLevel extends Model implements SluggableInterface
 {
+    use SluggableTrait;
+
     /**
      * The database table used by the model.
      *
@@ -19,6 +23,14 @@ class StudyLevel extends Model
      * @var array
      */
     protected $fillable = ['slug', 'title'];
+
+    /**
+     * @var array
+     */
+    protected $sluggable = [
+        'build_from' => 'title',
+        'save_to'    => 'slug',
+    ];
 
 
 }
