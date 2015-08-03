@@ -1,9 +1,8 @@
 <?php
 
-Route::get('/', function () {
-    flash()->success('Hello World!', 'Ovo je poruka...');
-    return view('welcome');
-});
+Route::get('/', [
+    'as' => 'home.index', 'uses' => 'PagesController@index'
+]);
 
 /**
  * ADMIN StudyLevels Route
