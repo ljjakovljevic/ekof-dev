@@ -94,4 +94,28 @@ class StudyLevelsController extends Controller
     {
         //
     }
+
+    /**
+     * Show all StudyLevels in PUBLIC
+     *
+     * @return \Illuminate\View\View
+     */
+    public function all()
+    {
+        $studyLevels = StudyLevel::all();
+        return view('study_levels.index', compact('studyLevels'));
+    }
+
+    /**
+     * Show StudyLevel by $slug
+     *
+     * @param string $slug
+     * @return \Illuminate\View\View
+     */
+    public function showOne($slug)
+    {
+        $studyLevel = StudyLevel::findBySlugOrFail($slug);
+
+        return view('study_levels.show-one', compact('studyLevel'));
+    }
 }

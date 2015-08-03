@@ -40,5 +40,5 @@ Route::get('ниво-студија', [
     'as' => 'study-levels.all', 'uses' => 'StudyLevelsController@all'
 ]);
 Route::get('ниво-студија/{slug}', [
-    'as' => 'study-levels.showOne', 'uses' => 'StudyLevelsController@show'
+    'as' => 'study-levels.showOne', 'uses' => 'StudyLevelsController@showOne'
 ]);
