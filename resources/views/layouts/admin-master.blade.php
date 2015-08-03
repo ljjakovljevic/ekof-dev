@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/libs/sweetalert.css') }}" rel="stylesheet">
 
     <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
 </head>
@@ -24,5 +25,10 @@
         </div>
     </div>
 </div>
+
+<script src="{{ elixir('js/app.js') }}"></script>
+<script src="{{ asset('js/libs/sweetalert-dev.js') }}"></script>
+@include('partials.flash')
+
 </body>
 </html>

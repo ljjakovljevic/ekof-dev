@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\StudyLevel;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,8 +17,8 @@ class StudyLevelsController extends Controller
      */
     public function index()
     {
-        $e = 'OK';
-        return view('admin._studyLevels.index', compact('e'));
+        $studyLevels = StudyLevel::all();
+        return view('admin._studyLevels.index', compact('studyLevels'));
     }
 
     /**
@@ -27,7 +28,7 @@ class StudyLevelsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin._studyLevels.create');
     }
 
     /**
@@ -38,7 +39,15 @@ class StudyLevelsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'         => 'required|unique:study_levels|max:100'
+        ]);
+
+        StudyLevel::create($request->all());
+
+        flash()->success('Честитамо!', 'Успешно сте креирали ниво студија!');
+
+        return redirect()->route('study-levels.index');
     }
 
     /**
