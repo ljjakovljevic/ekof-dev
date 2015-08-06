@@ -20,6 +20,7 @@ class CreateFacultiesTable extends Migration
             $table->string('title', 100);
             $table->string('short_title', 50);
             $table->string('street', 100);
+            $table->string('postal_code', 5);
             $table->string('city', 50);
             $table->string('phone', 20);
             $table->string('fax', 20);
