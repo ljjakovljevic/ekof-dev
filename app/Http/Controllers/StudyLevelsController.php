@@ -107,4 +107,12 @@ class StudyLevelsController extends Controller
         $studyLevels = StudyLevel::all();
         return view('study_levels.index', compact('studyLevels'));
     }
+
+    /**
+     * Get the studyTypes for the studyLevel.
+     */
+    public function studyTypes()
+    {
+        return $this->hasMany('App\studyType');
+    }
 }

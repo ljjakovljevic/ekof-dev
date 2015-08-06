@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="693721be-039e-451e-baa3-4972390b914a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/_studyTypes/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/_studyTypes/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StudyLevelsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudyLevelsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/archy.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/archy.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/_studyTypes/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/_studyTypes/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ekof.iws" />
@@ -36,10 +33,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TipoviStudija.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TipoviStudija.html" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Documents/LaravelHelpDocs/TipoviStudija.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43881857" vertical-offset="338" max-vertical-offset="1600">
+            <state vertical-scroll-proportion="0.0" vertical-offset="338" max-vertical-offset="1600">
               <caret line="20" column="190" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="190" />
               <folding />
             </state>
@@ -58,12 +55,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/_studyTypes/index.blade.php">
+      <file leaf-file-name="StudyLevelsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudyLevelsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
-              <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-              <folding />
+            <state vertical-scroll-proportion="0.7538678" vertical-offset="2239" max-vertical-offset="3100">
+              <caret line="111" column="44" selection-start-line="111" selection-start-column="44" selection-end-line="111" selection-end-column="44" />
+              <folding>
+                <element signature="e#40#59#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,11 +113,11 @@
         <option value="$PROJECT_DIR$/resources/views/pages/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_08_06_130945_create_study_types_table.php" />
         <option value="$PROJECT_DIR$/app/StudyType.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/StudyLevelsController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/_studyTypes/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/StudyTypesController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/_studyTypes/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/StudyLevelsController.php" />
       </list>
     </option>
   </component>
@@ -823,16 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudyLevelsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64838254" vertical-offset="764" max-vertical-offset="2900">
-          <caret line="49" column="55" selection-start-line="41" selection-start-column="8" selection-end-line="49" selection-end-column="55" />
-          <folding>
-            <element signature="e#40#59#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1289" max-vertical-offset="2000">
@@ -849,6 +838,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Documents/LaravelHelpDocs/TipoviStudija.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="338" max-vertical-offset="1600">
+          <caret line="20" column="190" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="190" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/_studyTypes/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudyTypesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3000">
@@ -859,19 +864,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/_studyTypes/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudyLevelsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
-          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/LaravelHelpDocs/TipoviStudija.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43881857" vertical-offset="338" max-vertical-offset="1600">
-          <caret line="20" column="190" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="190" />
-          <folding />
+        <state vertical-scroll-proportion="0.7538678" vertical-offset="2239" max-vertical-offset="3100">
+          <caret line="111" column="44" selection-start-line="111" selection-start-column="44" selection-end-line="111" selection-end-column="44" />
+          <folding>
+            <element signature="e#40#59#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

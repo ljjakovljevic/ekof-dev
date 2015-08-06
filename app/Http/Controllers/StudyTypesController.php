@@ -111,4 +111,12 @@ class StudyTypesController extends Controller
         $studyTypes = StudyType::all();
         return view('study_levels.index', compact('studyTypes'));
     }
+
+    /**
+     * Get the studyLevel that owns the studyTypes.
+     */
+    public function studyLevel()
+    {
+        return $this->belongsTo('App\studyLevel');
+    }
 }

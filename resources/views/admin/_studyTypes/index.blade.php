@@ -1,4 +1,5 @@
 @extends('layouts.admin-master')
+@section('title', 'Index StudyTypes')
 
 @section('content')
     <ul class="list-group">
