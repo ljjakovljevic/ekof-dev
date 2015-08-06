@@ -8,6 +8,8 @@ Route::get('/', [
  * ADMIN StudyLevels Route
  */
 Route::group(['prefix' => 'админ'], function () {
+
+    // StudyLevels
     Route::get('ниво-студија', [
         'as' => 'study-levels.index', 'uses' => 'StudyLevelsController@index'
     ]);
@@ -24,11 +26,31 @@ Route::group(['prefix' => 'админ'], function () {
     Route::put('ниво-студија/{slug}', [
         'as' => 'study-levels.update', 'uses' => 'StudyLevelsController@update'
     ]);
-    Route::get('ниво-студија/{slug}', [
-        'as' => 'study-levels.show', 'uses' => 'StudyLevelsController@show'
-    ]);
+    // Show Route
     Route::get('ниво-студија/{slug}/edit', [
         'as' => 'study-levels.edit', 'uses' => 'StudyLevelsController@edit'
+    ]);
+
+    // StudyTypes
+    Route::get('врсте-студија', [
+        'as' => 'study-types.index', 'uses' => 'StudyTypesController@index'
+    ]);
+    Route::post('врсте-студија', [
+        'as' => 'study-types.store', 'uses' => 'StudyTypesController@store'
+    ]);
+    Route::get('врсте-студија/create', [
+        'as' => 'study-types.create', 'uses' => 'StudyTypesController@create'
+    ]);
+    Route::patch('врсте-студија/{slug}', 'StudyTypesController@update');
+    Route::delete('врсте-студија/{slug}', [
+        'as' => 'study-types.destroy', 'uses' => 'StudyTypesController@destroy'
+    ]);
+    Route::put('врсте-студија/{slug}', [
+        'as' => 'study-types.update', 'uses' => 'StudyTypesController@update'
+    ]);
+    // Show Route
+    Route::get('врсте-студија/{slug}/edit', [
+        'as' => 'study-types.edit', 'uses' => 'StudyTypesController@edit'
     ]);
 });
 
@@ -39,5 +61,15 @@ Route::get('ниво-студија', [
     'as' => 'study-levels.all', 'uses' => 'StudyLevelsController@all'
 ]);
 Route::get('ниво-студија/{slug}', [
-    'as' => 'study-levels.showOne', 'uses' => 'StudyLevelsController@showOne'
+    'as' => 'study-levels.showOne', 'uses' => 'StudyLevelsController@show'
+]);
+
+/**
+ * PUBLIC StudyTypes Route
+ */
+Route::get('врсте-студија', [
+    'as' => 'study-types.list', 'uses' => 'StudyTypesController@all'
+]);
+Route::get('врсте-студија/{slug}', [
+    'as' => 'study-types.show', 'uses' => 'StudyTypesController@show'
 ]);

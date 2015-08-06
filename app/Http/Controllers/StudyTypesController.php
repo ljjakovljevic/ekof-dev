@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\StudyLevel;
+use App\StudyType;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class StudyLevelsController extends Controller
+class StudyTypesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +18,9 @@ class StudyLevelsController extends Controller
      */
     public function index()
     {
-        $studyLevels = StudyLevel::all();
-        return view('admin._studyLevels.index', compact('studyLevels'));
+        $studyTypes = StudyType::all();
+
+        return view('admin._studyTypes.index', compact('studyTypes'));
     }
 
     /**
@@ -28,7 +30,9 @@ class StudyLevelsController extends Controller
      */
     public function create()
     {
-        return view('admin._studyLevels.create');
+        $studyLevels = StudyLevel::all();
+
+        return view('admin._studyTypes.create', compact('studyLevels'));
     }
 
     /**
@@ -40,27 +44,27 @@ class StudyLevelsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title'         => 'required|unique:study_levels|max:100'
+            'title'         => 'required|unique:study_types|max:100',
+            'desc'          => 'required',
+            'active'        => 'required|boolean|max:1'
         ]);
 
-        StudyLevel::create($request->all());
+        StudyType::create($request->all());
 
-        flash()->success('Честитамо!', 'Успешно сте креирали ниво студија!');
+        flash()->success('Честитамо!', 'Успешно сте креирали нову врсту студија!');
 
-        return redirect()->route('study-levels.index');
+        return redirect()->route('study-types.index');
     }
 
     /**
-     * Show StudyLevel by $slug
+     * Display the specified resource.
      *
-     * @param string $slug
-     * @return \Illuminate\View\View
+     * @param  int  $id
+     * @return Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $studyLevel = StudyLevel::findBySlugOrFail($slug);
-
-        return view('study_levels.show-one', compact('studyLevel'));
+        //
     }
 
     /**
@@ -98,13 +102,13 @@ class StudyLevelsController extends Controller
     }
 
     /**
-     * Show all StudyLevels in PUBLIC
+     * Show all StudyTypes in PUBLIC
      *
      * @return \Illuminate\View\View
      */
     public function all()
     {
-        $studyLevels = StudyLevel::all();
-        return view('study_levels.index', compact('studyLevels'));
+        $studyTypes = StudyType::all();
+        return view('study_levels.index', compact('studyTypes'));
     }
 }
