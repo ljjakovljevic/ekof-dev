@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Faculty;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -43,12 +44,14 @@ class FacultiesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $faculty = Faculty::findBySlugOrFail($slug);
+
+        return view('faculties.show', compact('faculty'));
     }
 
     /**
@@ -83,5 +86,17 @@ class FacultiesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Show all StudyLevels in PUBLIC
+     *
+     * @return \Illuminate\View\View
+     */
+    public function all()
+    {
+        $faculties = Faculty::all();
+
+        return view('faculties.index', compact('faculties'));
     }
 }

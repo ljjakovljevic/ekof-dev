@@ -13,11 +13,10 @@ $factory->define(App\User::class, function ($faker) {
 $factory->define(App\Faculty::class, function () {
     return [
         'founder'           => 'Република Србија',
-        'university'        => 'Универзитет у Београду',
-        'slug'              => 'универзитет-у-београду–економски-факултет',
         'title'             => 'Универзитет у Београду – Економски факултет',
         'short_title'       => 'Економски факултет у Београду',
-        'street'            => 'Каменичка 6',
+        'street'            => 'Каменичка',
+        'street_no'         => '6',
         'postal_code'       => '11000',
         'city'              => 'Београд',
         'phone'             => '+381 (0) 11 30 21 222',
@@ -32,6 +31,8 @@ $factory->define(App\Faculty::class, function () {
         'bank'              => 'Министарство финансија - Управа за трезор, Филијала Стари град',
         'foreign_payments'  => 'Народна банка Србије',
         'pib'               => '100223295',
-        'pdv'               => '149923697'
+        'pdv'               => '149923697',
+        'published_at'      => '2013-04-26 00:00:00',
+        'updated_at'        => '2015-05-18 00:00:00'
     ];
 });

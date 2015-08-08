@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -24,11 +25,12 @@ class Faculty extends Model implements SluggableInterface
      */
     protected $fillable = [
         'founder',
-        'university',
         'slug',
         'title',
         'short_title',
         'street',
+        'street_no',
+        'postal_code',
         'city',
         'phone',
         'fax',
@@ -42,8 +44,17 @@ class Faculty extends Model implements SluggableInterface
         'bank',
         'foreign_payments',
         'pib',
-        'pdv'
+        'pdv',
+        'published_at',
+        'updated_at'
     ];
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * @var array
@@ -52,5 +63,28 @@ class Faculty extends Model implements SluggableInterface
         'build_from' => 'title',
         'save_to'    => 'slug',
     ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['published_at', 'updated_at'];
+
+    /**
+     * @param $date
+     */
+    public function setPublishedAtAttribute($date)
+    {
+        $this->attributes['published_at'] = Carbon::parse($date);
+    }
+
+    /**
+     * @param $date
+     */
+    public function setUpdatedAtAttribute($date)
+    {
+        $this->attributes['published_at'] = Carbon::parse($date);
+    }
 
 }

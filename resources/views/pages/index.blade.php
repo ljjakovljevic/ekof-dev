@@ -2,5 +2,5 @@
 
 @section('content')
     {!! Breadcrumbs::render('/') !!}
-    OK
+
 @endsection

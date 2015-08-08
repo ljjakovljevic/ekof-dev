@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\StudyLevel;
+use App\Service;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class StudyLevelsController extends Controller
+class ServicesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class StudyLevelsController extends Controller
      */
     public function index()
     {
-        $studyLevels = StudyLevel::all();
-        return view('admin._studyLevels.index', compact('studyLevels'));
+        $services = Service::all();
+        return view('admin._services.index', compact('services'));
     }
 
     /**
@@ -28,7 +28,7 @@ class StudyLevelsController extends Controller
      */
     public function create()
     {
-        return view('admin._studyLevels.create');
+        return view('admin._services.create');
     }
 
     /**
@@ -39,28 +39,20 @@ class StudyLevelsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'title'         => 'required|unique:study_levels|max:100'
-        ]);
-
-        StudyLevel::create($request->all());
-
-        flash()->success('Честитамо!', 'Успешно сте креирали ниво студија!');
-
-        return redirect()->route('study-levels.index');
+        //
     }
 
     /**
-     * Show StudyLevel by $slug
+     * Display the specified resource.
      *
-     * @param string $slug
-     * @return \Illuminate\View\View
+     * @param  string  $slug
+     * @return Response
      */
     public function show($slug)
     {
-        $studyLevel = StudyLevel::findBySlugOrFail($slug);
+        $services = Service::findBySlugOrFail($slug);
 
-        return view('study_levels.show', compact('studyLevel'));
+        return view('services.show', compact('services'));
     }
 
     /**
@@ -98,21 +90,14 @@ class StudyLevelsController extends Controller
     }
 
     /**
-     * Show all StudyLevels in PUBLIC
+     * Show all Services in PUBLIC
      *
      * @return \Illuminate\View\View
      */
     public function all()
     {
-        $studyLevels = StudyLevel::all();
-        return view('study_levels.index', compact('studyLevels'));
+        $services = Service::all();
+        return view('services.index', compact('services'));
     }
 
-    /**
-     * Get the studyTypes for the studyLevel.
-     */
-    public function studyTypes()
-    {
-        return $this->hasMany('App\studyType');
-    }
 }

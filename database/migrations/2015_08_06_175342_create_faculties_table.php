@@ -15,16 +15,16 @@ class CreateFacultiesTable extends Migration
         Schema::create('faculties', function (Blueprint $table) {
             $table->increments('id');
             $table->string('founder', 100);
-            $table->string('university', 100);
             $table->string('slug')->unique();
             $table->string('title', 100);
             $table->string('short_title', 50);
             $table->string('street', 100);
+            $table->string('street_no', 5);
             $table->string('postal_code', 5);
             $table->string('city', 50);
-            $table->string('phone', 20);
-            $table->string('fax', 20);
-            $table->string('email', 100);
+            $table->string('phone', 50);
+            $table->string('fax', 50);
+            $table->string('email', 255);
             $table->string('website', 100);
             $table->string('registration_no', 20);
             $table->string('activity_code', 10);
@@ -35,7 +35,8 @@ class CreateFacultiesTable extends Migration
             $table->string('foreign_payments', 100);
             $table->string('pib', 20);
             $table->string('pdv', 20);
-            $table->timestamps();
+            $table->timestamp('published_at');
+            $table->timestamp('updated_at');
         });
     }
 
